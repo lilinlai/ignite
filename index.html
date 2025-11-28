@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFCM SP廣告新功能及Listing Store點擊轉化率提升秘笈</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            background-color: #fefefe;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" opacity="0.08"><circle cx="200" cy="200" r="180" fill="none" stroke="%23ff6201" stroke-width="2"/><text x="200" y="120" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="%23ff6201">IGNITE</text><text x="200" y="150" text-anchor="middle" font-family="Arial" font-size="16" fill="%23ff6201">PROGRAM</text><path d="M150 180 L200 160 L250 180 L200 200 Z" fill="%23ff6201" opacity="0.7"/><circle cx="200" cy="280" r="8" fill="%23ff6201"/><text x="200" y="320" text-anchor="middle" font-family="Arial" font-size="12" fill="%23ff6201">潛力賣家點燃計畫</text></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 300px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ff6201;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #ff6201;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            color: #666;
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section h3 {
+            color: #ff6201;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff6201;
+            padding-left: 15px;
+        }
+        
+        .feature-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #ff6201;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fe9846 0%, #fe9846 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .benefit-list li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-list li:before {
+            content: "✓";
+            color: #ff6201;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .path-box {
+            background: #e8f4fd;
+            border-left: 4px solid #007ec6;
+            padding: 12px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .link-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .link-box a {
+            color: #856404;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .link-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .image-showcase {
+            text-align: center;
+            margin: 5px 0;
+            padding: 5px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .image-showcase img {
+            max-width: 100%;
+            max-height: 250px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin: 5px 0;
+        }
+        
+        .image-grid .image-showcase {
+            margin: 0;
+        }
+        
+        .image-grid .image-showcase img {
+            max-height: 220px;
+        }
+        
+        .image-caption {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #ff6201, #fe9846);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ff6201;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .two-column {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .spv-details {
+            background: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .spv-section {
+            margin-bottom: 20px;
+        }
+        
+        .spv-section h4 {
+            color: #ff6201;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #fe9846;
+            padding-bottom: 5px;
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .spec-table th, .spec-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .spec-table th {
+            background-color: #fe9846;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .error-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        @media print {
+            .two-column {
+                display: block;
+            }
+            .column {
+                margin-bottom: 15px;
+            }
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-showcase img {
+                max-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BFCM SP廣告新功能及Listing Store點擊轉化率提升秘笈</h1>
+        <h2>Ignite計畫賣家專屬指南</h2>
+    </div>
+
+    <div class="section">
+        <h3>🚀 SPSB Prompt 廣告新功能</h3>
+        <div class="feature-box">
+            <div class="feature-title">智能Prompt自動優化系統</div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p>全新的<span class="highlight">SPSB Prompt功能</span>讓您的廣告更有依據地進行優化。當消費者與Rufus互動時，系統會自動推薦您的廣告，並在後台提供詳細的Prompt成效報告。</p>
+                    
+                    <ul class="benefit-list">
+                        <li>系統自動在SP和SB活動中加入prompt，無需手動設定</li>
+                        <li>即時追蹤哪個prompt帶來最佳點擊轉換效果</li>
+                        <li>基於AI互動數據的精準廣告投放</li>
+                        <li>等報告功能上線後，可直接在廣告平台查看所有prompt成效</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="image-grid">
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/SPSB_Prompt_Ads_console2.jpg" alt="SPSB Prompt 廣告後台截圖">
+                            <div class="image-caption">廣告後台介面</div>
+                        </div>
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/SPSB_Prompt_listing2.jpg" alt="SPSB Prompt 商品頁面展示">
+                            <div class="image-caption">商品頁面效果</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="path-box">
+                查看路徑：廣告活動 → 廣告組 → 廣告 → Prompt<br>
+                功能位置：列出所有被點擊過的prompt及其成效數據
+            </div>
+            
+            <div class="link-box">
+                📖 <strong>詳細了解：</strong> <a href="https://advertising.amazon.com/zh-tw/resources/whats-new/unboxed-2025-sponsored-products-and-sponsored-brands-prompts" target="_blank">SPSB Prompt 官方說明文件</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🎬 SPV (Sponsored Products Video) 影片廣告</h3>
+        <div class="feature-box">
+            <div class="feature-title">影片廣告轉化率提升9%</div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p><span class="highlight">SPV影片廣告</span>是提升轉化率的強力工具，根據最新數據顯示，使用影片的廣告活動CTR平均提升9%。</p>
+                    
+                    <ul class="benefit-list">
+                        <li>動態展示產品特色和使用場景</li>
+                        <li>提高消費者參與度和停留時間</li>
+                        <li>顯著提升點擊轉化率</li>
+                        <li>適合展示產品功能和優勢</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="image-grid">
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/SPV_portal.jpg" alt="SPV 廣告入口">
+                            <div class="image-caption">設定入口</div>
+                        </div>
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/SPV_portal2.jpg" alt="SPV 廣告管理介面">
+                            <div class="image-caption">管理介面</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="spv-details">
+                <div class="spv-section">
+                    <h4>📋 影片規格要求</h4>
+                    <p><strong>技術規格</strong></p>
+                    <table class="spec-table">
+                        <tr>
+                            <th>項目</th>
+                            <th>規格要求</th>
+                        </tr>
+                        <tr>
+                            <td>上傳數量</td>
+                            <td>1-5 個影片</td>
+                        </tr>
+                        <tr>
+                            <td>影片長度</td>
+                            <td>最少 7 秒，無上限</td>
+                        </tr>
+                        <tr>
+                            <td>畫面比例</td>
+                            <td>16:9（橫向），2026年將支援垂直格式</td>
+                        </tr>
+                        <tr>
+                            <td>解析度</td>
+                            <td>1920×1080 px</td>
+                        </tr>
+                        <tr>
+                            <td>檔案格式</td>
+                            <td>MP4 或 MOV</td>
+                        </tr>
+                        <tr>
+                            <td>音訊</td>
+                            <td>無音訊（系統會自動移除）</td>
+                        </tr>
+                        <tr>
+                            <td>檔案大小</td>
+                            <td>最大 5 GB</td>
+                        </tr>
+                    </table>
+                    
+                    <p><strong>標題與描述</strong></p>
+                    <ul class="benefit-list">
+                        <li>功能標題：每個影片最多 15 個字元</li>
+                        <li>必須至少有一個標題描述展示的功能</li>
+                        <li>描述為選填，會顯示在轉場畫面</li>
+                    </ul>
+                </div>
+                
+                <div class="spv-section">
+                    <h4>✅ 最佳實踐</h4>
+                    <div class="two-column">
+                        <div class="column">
+                            <p><strong>內容製作建議</strong></p>
+                            <ul class="benefit-list">
+                                <li>聚焦產品功能：清楚展示產品的實際功能和使用方式</li>
+                                <li>展示日常使用情境：在真實場景中演示產品</li>
+                                <li>使用自然光線或中性背景：突出產品本身</li>
+                                <li>展示產品實際操作：包含真實用戶互動畫面</li>
+                                <li>確保畫面穩定：避免模糊或晃動</li>
+                                <li>產品應佔畫面 50% 以上</li>
+                            </ul>
+                            
+                            <p><strong>優化技巧</strong></p>
+                            <ul class="benefit-list">
+                                <li>創建吸引人的開場</li>
+                                <li>確保描述與產品詳情頁一致</li>
+                                <li>優化功能標題和關鍵字</li>
+                                <li>使用 Bid Boost 提升曝光</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <div class="image-showcase">
+                                <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/SPV_CX.jpg" alt="SPV 影片廣告客戶體驗">
+                                <div class="image-caption">SPV影片廣告客戶體驗展示</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spv-section">
+                    <h4>⚠️ 必須避免的事項</h4>
+                    <div class="error-box">
+                        <ul class="benefit-list">
+                            <li>內容與描述不符</li>
+                            <li>過多動態圖形或特效</li>
+                            <li>模糊畫面、幻燈片或計時文字</li>
+                            <li>需要旁白解釋的影片（因為音訊會被移除）</li>
+                            <li>顯示明確品牌標誌（除非在產品本身上）</li>
+                            <li>超過 30 秒的字幕文字</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="spv-section">
+                    <h4>🔄 設置流程</h4>
+                    <ol style="padding-left: 20px;">
+                        <li>從 Campaign Manager 的 Video 分頁點擊「Add video」</li>
+                        <li>使用 Video Builder 上傳或選擇影片</li>
+                        <li>添加產品功能名稱和描述（可使用 AI 優化）</li>
+                        <li>預覽並等待審核（24-48 小時內）</li>
+                        <li>修正審核錯誤（如有）</li>
+                        <li>影片狀態變為「Delivering」後即可投放</li>
+                        <li>應用 Bid Boost 增加曝光機會</li>
+                        <li>持續優化影片內容和描述</li>
+                    </ol>
+                </div>
+                
+                <div class="spv-section">
+                    <h4>💰 收費與報表</h4>
+                    <div class="success-box">
+                        <p><strong>收費方式：</strong>按點擊付費（CPC），僅當用戶點擊影片或相關 ASIN 時收費</p>
+                        <p><strong>可用報表：</strong>影片觀看率、5 秒觀看數、點擊率、訂單、銷售額、ROAS 等</p>
+                        <p><strong>下載位置：</strong>Campaign Manager 的 Video Report</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="path-box">
+                設定路徑：廣告活動 → 廣告組 → 廣告 → Add Video<br>
+                注意：確保影片符合Amazon廣告規範
+            </div>
+            
+            <div class="link-box">
+                📖 <strong>詳細了解：</strong> <a href="https://advertising.amazon.com/zh-tw/resources/whats-new/unboxed-2025-sponsored-products-video" target="_blank">SPV 影片廣告官方說明</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🛍️ A+ Shoppable Collections 購物體驗升級</h3>
+        <div class="feature-box">
+            <div class="feature-title">輪播式A+內容模組</div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p><span class="highlight">A+ Shoppable Collections</span>建議將Deal/PED ASIN利用此模組作為曝光版位！輪播式A+可為其他產品做導流，達到交叉銷售效果。</p>
+                    
+                    <ul class="benefit-list">
+                        <li>取代原有品牌故事模組，提供更豐富互動體驗</li>
+                        <li>支援產品交叉銷售和導流功能</li>
+                        <li>提升整體店鋪轉化率</li>
+                        <li>增強品牌展示效果</li>
+                        <li>創建互動式購物體驗</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="image-grid">
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/Shoppable_ASC_module.jpg" alt="A+ Shoppable Collections 模組">
+                            <div class="image-caption">模組展示</div>
+                        </div>
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/Shoppable_A.jpg" alt="A+ Shoppable Collections 效果">
+                            <div class="image-caption">實際效果</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="path-box">
+                設定路徑：賣家後台 → Advertising → A+ Content Manager → 選擇Shoppable Collections<br>
+                注意：此功能位於Brand Story位置，與傳統A+內容不同
+            </div>
+            
+            <div class="link-box">
+                📖 <strong>詳細了解：</strong> <a href="https://m.media-amazon.com/images/G/28/TWGS/SU/Quickguide_aplus-shoppable-collections_TW.pdf" target="_blank">A+ Shoppable Collections 快速指南</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>🏪 品牌旗艦店 "所有促銷" 頁面</h3>
+        <div class="feature-box">
+            <div class="feature-title">Store Deal Page自動生成</div>
+            
+            <div class="two-column">
+                <div class="column">
+                    <p>品牌旗艦店新增<span class="highlight">"所有促銷"頁面功能</span>，在BFCM期間會自動生成Store Deal Page，並在Store首頁顯示明顯橫幅引導消費者進入All Deal Page。</p>
+                    
+                    <ul class="benefit-list">
+                        <li>自動整合所有促銷活動於單一頁面</li>
+                        <li>BFCM期間提供明顯入口引導</li>
+                        <li>提升促銷活動曝光度</li>
+                        <li>簡化消費者尋找優惠的流程</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <p><strong>注意：</strong>如果賣家已自行設定Featured Deal Page，系統將不會自動生成此功能。</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="image-grid">
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/All_Deals_Page_Full.jpg" alt="Store Deal Page 完整展示">
+                            <div class="image-caption">完整頁面</div>
+                        </div>
+                        <div class="image-showcase">
+                            <img src="https://m.media-amazon.com/images/G/28/TWGS/ESM/All_Deal_Page.jpg" alt="Store Deal Page 詳細">
+                            <div class="image-caption">詳細展示</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="link-box">
+                📖 <strong>詳細了解：</strong> <a href="https://advertising.amazon.com/help/GN8ENNYBFQQUTG7K" target="_blank">品牌旗艦店促銷頁面說明</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>📊 BFCM期間優化建議</h3>
+        <div class="feature-box">
+            <div class="feature-title">綜合策略運用</div>
+            
+            <ul class="benefit-list">
+                <li>結合SPSB Prompt和SPV影片廣告，最大化廣告效果</li>
+                <li>利用A+ Shoppable Collections展示Deal商品</li>
+                <li>確保品牌旗艦店促銷頁面完整設置</li>
+                <li>定期檢查Prompt成效報告，優化廣告策略</li>
+                <li>監控影片廣告CTR表現，調整投放預算</li>
+            </ul>
+            
+            <div class="success-box">
+                <p><strong>最高指導準則：</strong>既然都在大促選擇做促銷了，就應該要最大化被消費者搜尋/曝光/點擊到促銷的ASIN！黑五網一高峰正式來臨，大家加油！</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>🔥 立即行動，搶佔BFCM商機！</h3>
+        <p>運用這些全新功能，讓您的產品在BFCM期間脫穎而出，實現銷售突破！</p>
+        <p><strong>記住：</strong>所有功能都已為Ignite計畫賣家準備就緒，現在就開始設置吧！</p>
+    </div>
+
+    <div class="footer">
+        <p><strong>Amazon Ignite Program</strong> | 潛力賣家點燃計畫專屬資源</p>
+        <p>© 2025 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
+    </div>
+</body>
+</html>
